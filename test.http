@@ -1,0 +1,78 @@
+﻿### Проверка получения всех блюд (GET)
+GET http://localhost:10000/api/dishes
+
+### Создание нового блюда (POST)
+POST http://localhost:10000/api/dishes
+Content-Type: application/json
+
+{
+  "name": "Сырники",
+  "category": "Десерты",
+  "price": 250,
+  "isAvailable": true
+}
+
+### PUT: Изменение блюда с ID=1 (меняем цену и название)
+PUT http://localhost:10000/api/dishes/1
+Content-Type: application/json
+
+{
+  "name": "Пицца Пепперони",
+  "category": "Пицца",
+  "price": 550,
+  "isAvailable": true
+}
+
+### DELETE: Удаление блюда с ID=2
+DELETE http://localhost:10000/api/dishes/2
+
+### GET: Получить все заказы
+GET http://localhost:10000/api/orders
+
+### GET: Получить заказ по ID
+GET http://localhost:10000/api/orders/1
+
+### POST: Создать новый заказ
+POST http://localhost:10000/api/orders
+Content-Type: application/json
+
+{
+  "dishId": 3,
+  "courierId": 2,
+  "address": "ул. Пушкина, д. 15, кв. 3",
+  "status": "Новый"
+}
+
+### PUT: Изменить данные курьера (ID=1)
+PUT http://localhost:10000/api/couriers/1
+Content-Type: application/json
+
+{
+  "fullName": "Иванов Иван Иванович",
+  "phone": "+375291112233",
+  "vehicle": "Автомобиль"
+}
+
+### DELETE: Удалить курьера (ID=3)
+DELETE http://localhost:10000/api/couriers/3
+
+### PUT: Изменить рейтинг ресторана (ID=2)
+PUT http://localhost:10000/api/restaurants/2
+Content-Type: application/json
+
+{
+  "title": "Sakura",
+  "address": "пр. Мира 15",
+  "rating": 5.0
+}
+
+### PUT: Изменить статус заказа (ID=1)
+PUT http://localhost:10000/api/orders/1
+Content-Type: application/json
+
+{
+  "dishId": 1,
+  "courierId": 2,
+  "address": "Новый адрес доставки, д. 5",
+  "status": "Доставлен"
+}
