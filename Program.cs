@@ -1,6 +1,7 @@
 using wt_lab6_6minimalapi_talko.Data;
 using wt_lab6_6minimalapi_talko.Models;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
@@ -18,13 +19,17 @@ var app = builder.Build();
 //    app.MapOpenApi();
 //}
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
 
-app.MapGet("/", () => "Minimal API работает!");
+//app.MapOpenApi();
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.MapGet("/", () => "Minimal API is working!");
 
 app.MapGet("/api/info", () =>
 {
